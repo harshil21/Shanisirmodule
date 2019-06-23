@@ -12,3 +12,4 @@ Also run the command: python -m textblob.download_corpora
 Make sure to sure all path and file names match in your computer.
 
 
+*just testing if it lets me edit*

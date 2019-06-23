@@ -1,4 +1,4 @@
-# Shanisirspeak-converter
+# ShaniSirModule
 The ultimate converter (not to mock him, but to celebrate)
 
 Make sure to download the selected modules-

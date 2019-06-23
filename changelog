@@ -1,0 +1,4 @@
+The first version with a version number\n -Added NLP to our program. This makes the converter smarter
+ -Added more voices to soundboard.
+ -Fixed computer speaking word by word when his voice is not available! (also changed rate consequently!)
+ -Slightly improved NLP.

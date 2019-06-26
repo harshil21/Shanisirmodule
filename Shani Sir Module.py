@@ -32,7 +32,7 @@ phrases = ["like you say", "like you speak", "like you do", "not to trouble you"
            "jokey", "so sowry", "embarrassing", "knocking",
            "it will be fruitful"] # 4 PER LINE ONLY PLEASE
 
-actualvoice=["good mourning","so sowry","it is embarrassing to me like basically",
+actualvoice=["good morning","so sowry","it is embarrassing to me like basically",
              "like you say","knocking", "like this", "not clear", "water", "worksheet"]	#Make sure phrases, actualvoice, and file name have the same name or his voice won't play
 
 #For converting normal text to shani text:
@@ -58,8 +58,8 @@ def knocking():
 def so_sowry():
     playsound(f'{location}so sowry.mp3')
     
-def good_mourning():
-    playsound(f'{location}good mourning.mp3') #will be replaced when better quality is available.
+def good_morning():
+    playsound(f'{location}good morning.mp3') #will be replaced when better quality is available.
     
 def like_this():
     playsound(f'{location}like this.mp3')
@@ -211,7 +211,7 @@ def create_soundboard():
     like_you_sayButton = tkinter.Button(soundboard, text = "Like you say", bg = r.choice(colours), command = like_you_say).grid(row = 1, column = 2)
     knockingButton     = tkinter.Button(soundboard, text = "KNOCKNKNOCKKNCOK", bg = r.choice(colours), command = knocking).grid(row = 1, column = 3)
     so_sowryButton     = tkinter.Button(soundboard, text = "Sowry", bg = r.choice(colours), command = so_sowry).grid(row = 1, column = 4)
-    good_mourningButton= tkinter.Button(soundboard, text = "Good mourning", bg = r.choice(colours), command = good_mourning).grid(row = 1, column = 5)
+    good_morningButton= tkinter.Button(soundboard, text = "Good morning", bg = r.choice(colours), command = good_morning).grid(row = 1, column = 5)
     like_thisButton    = tkinter.Button(soundboard, text = "Like this", bg = r.choice(colours), command = like_this).grid(row = 2, column = 1)
     not_clearButton    = tkinter.Button(soundboard, text = "Not clear?", bg = r.choice(colours), command = not_clear).grid(row = 2, column = 2)
     waterButton        = tkinter.Button(soundboard, text = "Water", bg = r.choice(colours), command = water).grid(row = 2, column = 3)

@@ -3,7 +3,7 @@
 
 Install the following modules:
   
-1. pip install textblob
+1. pip install textblob\
 run the command: python -m textblob.download_corpora
 2. pip install pyttsx3
 3. pip install playsound

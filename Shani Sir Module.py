@@ -71,24 +71,22 @@ def water():
     playsound(f'{location}water.mp3')
 
 def worksheet():
-    playsound(f'{location}worksheet.mp3') 
+    playsound(f'{location}worksheet.mp3')  
 
 #TEXT TO SPEECH
 #LEARN NATURAL LANGUAGE PROCESSING: http://www.nltk.org/book/ch00.html
 #Also: https://textblob.readthedocs.io/en/dev/quickstart.html#create-a-textblob
 #All parts of speech tags(POS)- https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
-def shaniTTS():
+def shaniTTS(eng):
 
     """Takes a string and converts it to Shani Sir language, like you speak."""
     
 #USING NATURAL LANGUAGE PROCESSING-
 
-    eng = input("What do you want to convert to Shani Sir language? ")
-
     blob=TextBlob(eng)
 
-    cleaned=blob.words			#Returns list with no punctutation marks
+    cleaned=blob.words		#Returns list with no punctutation marks
 
     for word,tag in blob.tags:		#blob.tags is a list of pairs of tuples which tells the POS
         index=cleaned.index(word)
@@ -102,7 +100,7 @@ def shaniTTS():
         elif (blob.sentiment.polarity<0 and tag=='PRP'):			#sentiment tells if string is positive, neutral or negative
             if 'it is embarrassing to me like basically' not in cleaned:
                 cleaned.append('it is embarrassing to me like basically')
-	    	cleaned.insert(index+1,'so sorry')
+            cleaned.insert(index+1,'so sorry')
 
         elif (blob.sentiment.polarity>0.5 and tag=='PRP'):
             cleaned.insert(index,r.choice(mood))
@@ -131,8 +129,6 @@ def shaniTTS():
     if temp!='':
         shanivoice.say(temp)
         shanivoice.runAndWait()
-        
-    print(shanitext)
 
     return shanitext
 
@@ -173,7 +169,7 @@ def configureGrid(window, rows, columns):
 def returnConverted(window, entry):
 
     print(entry.get())
-    converted = tkinter.Label(window, text = f"{entry.get()}").grid(row = 4, column = 2)
+    converted = tkinter.Label(window, text = f"{shaniTTS(entry.get())}").grid(row = 4, column = 2)
 
 
 def create_shaniUI():

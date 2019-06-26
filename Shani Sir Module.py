@@ -84,31 +84,30 @@ def shaniTTS():
 
     eng = input("What do you want to convert to Shani Sir language? ")
 
-	blob=TextBlob(eng)
+    blob=TextBlob(eng)
 
-	cleaned=blob.words			#Returns list with no punctutation marks
+    cleaned=blob.words			#Returns list with no punctutation marks
 
-	for word,tag in blob.tags:		#blob.tags is a list of pairs of tuples which tells the POS
-    	index=cleaned.index(word)
-    
-    	if tag=='DT' and word=='a' or word=='this':
-        	cleaned.insert(index,r.choice(b_determiners))
+    for word,tag in blob.tags:		#blob.tags is a list of pairs of tuples which tells the POS
+        index=cleaned.index(word)
 
-    	elif tag=='JJ':
-        	cleaned.insert(index+1,r.choice(adjectives))
+        if tag=='DT' and word=='a' or word=='this':
+            cleaned.insert(index,r.choice(b_determiners))
 
-    	elif (blob.sentiment.polarity<0 and tag=='PRP'):			#sentiment tells if string is positive, neutral or negative
-        	if 'it is embarrassing to me like basically' not in cleaned:
-        		cleaned.append('it is embarrassing to me like basically')
-                
-        	cleaned.insert(index+1,'so sorry')
-        
-    	elif (blob.sentiment.polarity>0.5 and tag=='PRP'):
-        	cleaned.insert(index,r.choice(mood))
-            
-        #More parameters to come...
-	cleaned.insert(0,'good morning')
-	shanitext=' '.join(cleaned)
+        elif tag=='JJ':
+            cleaned.insert(index+1,r.choice(adjectives))
+
+        elif (blob.sentiment.polarity<0 and tag=='PRP'):			#sentiment tells if string is positive, neutral or negative
+            if 'it is embarrassing to me like basically' not in cleaned:
+                cleaned.append('it is embarrassing to me like basically')
+		cleaned.insert(index+1,'so sorry')
+
+        elif (blob.sentiment.polarity>0.5 and tag=='PRP'):
+            cleaned.insert(index,r.choice(mood))
+
+    #More parameters to come...
+    cleaned.insert(0,'good morning')
+    shanitext=' '.join(cleaned)
 
     #VOICE
     shanivoice = pyttsx3.init()

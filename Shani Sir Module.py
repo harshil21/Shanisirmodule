@@ -47,7 +47,7 @@ neutral=["okay, fine?", "decide a date"]
 location = "C:\\Users\\SAMIR.M_TMS\\Downloads\\Shanisirmodule-master\\Shanisirmodule-master\\clips"
 
 def embarrassing():
-    playsound('embarrassing.mp3') #make sure to put correct file path in your system before running
+    playsound('f'{location}it is embarrassing to me like basically.mp3') #make sure to put correct file path in your system before running
 
 def like_you_say():
     playsound(f'{location}like you say.mp3')
@@ -120,7 +120,7 @@ def shaniTTS(eng):
         if i in actualvoice:
             shanivoice.say(temp)
             shanivoice.runAndWait()
-            playsound('C:\\Users\\aarti\\Downloads\\'+i+'.mp3')     #plays in his voice if present
+            playsound(f'{location}'+i+'.mp3')     #plays in his voice if present
             temp=''
 
         else:

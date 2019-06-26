@@ -47,7 +47,7 @@ neutral=["okay, fine?", "decide a date"]
 location = "C:\\Users\\SAMIR.M_TMS\\Downloads\\Shanisirmodule-master\\Shanisirmodule-master\\clips"
 
 def embarrassing():
-    playsound('f'{location}it is embarrassing to me like basically.mp3') #make sure to put correct file path in your system before running
+    playsound(f'{location}it is embarrassing to me like basically.mp3') #make sure to put correct file path in your system before running
 
 def like_you_say():
     playsound(f'{location}like you say.mp3')

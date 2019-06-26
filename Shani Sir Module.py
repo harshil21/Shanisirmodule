@@ -44,32 +44,34 @@ neutral=["okay, fine?", "decide a date"]
 #CLIPS
 #ADJUST THE FOLLOWING CODE ACCORDING TO YOUR SYSTEM
 
+location = "C:\\Users\\SAMIR.M_TMS\\Downloads\\Shanisirmodule-master\\Shanisirmodule-master\\clips"
+
 def embarrassing():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\embarrassing.mp3') #make sure to put correct file path in your system before running
+    playsound('embarrassing.mp3') #make sure to put correct file path in your system before running
 
 def like_you_say():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\like you say.mp3')
+    playsound(f'{location}like you say.mp3')
 
 def knocking():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\knocking.mp3')
+    playsound(f'{location}knocking.mp3')
 
 def so_sowry():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\so sowry.mp3')
+    playsound(f'{location}so sowry.mp3')
     
 def good_mourning():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\good mourning.mp3') #will be replaced when better quality is available.
+    playsound(f'{location}good mourning.mp3') #will be replaced when better quality is available.
     
 def like_this():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\like this.mp3')
+    playsound(f'{location}like this.mp3')
 
 def not_clear():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\not clear.mp3')
+    playsound(f'{location}not clear.mp3')
 
 def water():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\water.mp3')
+    playsound(f'{location}water.mp3')
 
 def worksheet():
-    playsound('C:\\Users\\Uncle Sam\\Desktop\\sthyaVERAT\\4 FUN ya Practice\\Shani Sir\\Clips\\worksheet.mp3')  
+    playsound(f'{location}worksheet.mp3') 
 
 #TEXT TO SPEECH
 #LEARN NATURAL LANGUAGE PROCESSING: http://www.nltk.org/book/ch00.html

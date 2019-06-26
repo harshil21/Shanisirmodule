@@ -32,7 +32,7 @@ phrases = ["like you say", "like you speak", "like you do", "not to trouble you"
            "jokey", "so sowry", "embarrassing", "knocking",
            "it will be fruitful"] # 4 PER LINE ONLY PLEASE
 
-actualvoice=["good mourning","so sowry","embarrassing",
+actualvoice=["good mourning","so sowry","it is embarrassing to me like basically",
              "like you say","knocking", "like this", "not clear", "water", "worksheet"]	#Make sure phrases, actualvoice, and file name have the same name or his voice won't play
 
 #For converting normal text to shani text:

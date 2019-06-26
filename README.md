@@ -1,15 +1,11 @@
 # ShaniSirModule
-The ultimate converter (not to mock him, but to celebrate)
+*"Not to mock the legend, but to celebrate him."*
 
-Make sure to download the selected modules-
+Install the following modules:
   
 1. pip install textblob
+run the command: python -m textblob.download_corpora
 2. pip install pyttsx3
 3. pip install playsound
 
-Also run the command: python -m textblob.download_corpora
-
-Make sure to sure all path and file names match in your computer.
-
-
-*just testing if it lets me edit*
+All paths and file names must be edited according to your computer.

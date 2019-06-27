@@ -8,4 +8,4 @@ run the command: python -m textblob.download_corpora
 2. pip install pyttsx3
 3. pip install playsound
 
-All paths and file names must be edited according to your computer.
+

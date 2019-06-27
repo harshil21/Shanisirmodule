@@ -171,7 +171,6 @@ def configureGrid(window, rows, columns):
 
 def returnConverted(window, entry):
 
-    print(entry.get())
     converted = tkinter.Label(window, text = f"{shaniTTS(entry.get())}").grid(row = 4, column = 2)
 
 

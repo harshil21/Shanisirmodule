@@ -14,6 +14,7 @@ print(f"Changelog: {changelog}")
 #Full class 1 - https://1drv.ms/u/s!Aq6CKo0noHNiuEYPaIZD5mP90zGM
 #Full class 2A - https://drive.google.com/open?id=1EO_woePO7WlxgnPbzBoVXGLbelekrPZR
 #Full class 2B - https://drive.google.com/open?id=1pr834BjzA8g4iPpDnJar8XC0dfAIvhHC
+#Full class 3 - https://drive.google.com/open?id=1Re1CkRJ_1iLp4Ej2t8nDyc8GyCG7OrXf
 #link to clips- https://drive.google.com/open?id=1ACR-zfYcIXVQa6G7lfn8k8bdv_L7wOrP (updated daily)
 #Full link to good morning (1:09)- https://onedrive.live.com/?authkey=%21ALjEdhW122%5FJZso&cid=6273A0278D2A82AE&id=6273A0278D2A82AE%217239&parId=root&o=OneUp
 #ALL NECCESARY MODULES MUST BE INSTALLED BEFORE RUNNING THIS SCRIPT - pyttsx3, playsound, TextBlob

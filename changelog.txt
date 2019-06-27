@@ -1,6 +1,4 @@
-Version 0.999 Beta
+Version 0.9.2
 
-The first version with a version number\n -Added NLP to our program. This makes the converter smarter
- -Added more voices to soundboard.
- -Fixed computer speaking word by word when his voice is not available! (also changed rate consequently!)
- -Slightly improved NLP.
+-Dynamically gets file path, so now you do not need to manually change file paths.
+-Entire module is now interactive and user friendly.

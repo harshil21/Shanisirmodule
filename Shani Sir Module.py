@@ -81,7 +81,7 @@ def worksheet():
 #Also: https://textblob.readthedocs.io/en/dev/quickstart.html#create-a-textblob
 #All parts of speech tags(POS)- https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html
 
-def shaniTTS(eng):
+def shaniTTS(eng=''):
 
     """Takes a string and converts it to Shani Sir language, like you speak."""
     
@@ -109,7 +109,8 @@ def shaniTTS(eng):
             cleaned.insert(index,r.choice(mood))
 
     	#More parameters to come...
-    cleaned.insert(0,'good morning')
+    if eng!='':                     #If input is passed
+    	cleaned.insert(0,'good morning')
     shanitext=' '.join(cleaned)
 
     #VOICE

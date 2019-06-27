@@ -23,6 +23,7 @@ import random as r
 import pyttsx3
 import tkinter
 import os
+from tkinter import messagebox
 from playsound import playsound
 from textblob import TextBlob
 
@@ -111,6 +112,9 @@ def shaniTTS(eng=''):
     	#More parameters to come...
     if eng!='':                     #If input is passed
     	cleaned.insert(0,'good morning')
+     
+    else:
+        messagebox.showinfo("Error", "No input received!")		#Displays error box when no input is received.
     shanitext=' '.join(cleaned)
 
     #VOICE

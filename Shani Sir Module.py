@@ -22,6 +22,7 @@ print(f"Changelog: {changelog}")
 import random as r
 import pyttsx3
 import tkinter
+import os
 from playsound import playsound
 from textblob import TextBlob
 
@@ -44,7 +45,9 @@ neutral=["okay, fine?", "decide a date"]
 #CLIPS
 #ADJUST THE FOLLOWING CODE ACCORDING TO YOUR SYSTEM
 
-location = "C:\\Users\\SAMIR.M_TMS\\Downloads\\Shanisirmodule-master\\Shanisirmodule-master\\clips"
+loc=os.path.dirname(os.path.abspath('__Shani Sir Module__'))
+
+location = loc+'\\clips\\'
 
 def embarrassing():
     playsound(f'{location}it is embarrassing to me like basically.mp3') #make sure to put correct file path in your system before running

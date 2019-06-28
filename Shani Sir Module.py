@@ -115,7 +115,7 @@ def shaniTTS(eng=''):
     	cleaned.insert(0,'good morning')
      
     else:
-        messagebox.showinfo("Error", "No input received!")          #Displays error box when no input is received.
+        messagebox.showinfo("Error", "There is nothing to convert, like you say.")          #Displays error box when no input is received.
     shanitext=' '.join(cleaned)
 
     #VOICE

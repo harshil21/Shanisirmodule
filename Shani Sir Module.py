@@ -91,9 +91,9 @@ def shaniTTS(eng=''):
 
     blob=TextBlob(eng)
 
-    cleaned=blob.words		#Returns list with no punctutation marks
+    cleaned=blob.words          #Returns list with no punctutation marks
 
-    for word,tag in blob.tags:		#blob.tags is a list of pairs of tuples which tells the POS
+    for word,tag in blob.tags:          #blob.tags is a list of pairs of tuples which tells the POS
         index=cleaned.index(word)
 
         if tag=='DT' and word=='a' or word=='this':
@@ -102,7 +102,7 @@ def shaniTTS(eng=''):
         elif tag=='JJ':
             cleaned.insert(index+1,r.choice(adjectives))
 
-        elif (blob.sentiment.polarity<0 and tag=='PRP'):			#sentiment tells if string is positive, neutral or negative
+        elif (blob.sentiment.polarity<0 and tag=='PRP'):            #sentiment tells if string is positive, neutral or negative
             if 'it is embarrassing to me like basically' not in cleaned:
                 cleaned.append('it is embarrassing to me like basically')
             cleaned.insert(index+1,'so sorry')
@@ -111,11 +111,13 @@ def shaniTTS(eng=''):
             cleaned.insert(index,r.choice(mood))
 
     	#More parameters to come...
-    if eng!='':                     #If input is passed
+
+    if eng!='':         #If input is passed
     	cleaned.insert(0,'good morning')
      
     else:
-        messagebox.showinfo("Error", "There is nothing to convert, like you say")		#Displays error box when no input is received.
+        messagebox.showinfo("Error", "There is nothing to convert, like you say.")          #Displays error box when no input is received.
+
     shanitext=' '.join(cleaned)
 
     #VOICE
@@ -129,7 +131,7 @@ def shaniTTS(eng=''):
         if i in actualvoice:
             shanivoice.say(temp)
             shanivoice.runAndWait()
-            playsound(f'{location}'+i+'.mp3')     #plays in his voice if present
+            playsound(f'{location}'+i+'.mp3')           #plays in his voice if present
             temp=''
 
         else:
@@ -141,6 +143,18 @@ def shaniTTS(eng=''):
 
     return shanitext
 
+
+def randomspeak():
+
+    """Chooses a line from a text file of random sentences and converts it to Shani Sir language."""
+
+    file = open("random_sentences.txt", "r")
+    line = r.choice(file.readlines())
+    file.close()
+    
+    return shaniTTS(line)
+
+    
 #USER INTERFACES
 
 #{"yellow" : "#FFFF00", "red" : "#E50000", "blue" : "#0C6FFF", "green" : "#58E900", "orange" : "#F38800", "black" : "#000000", "white" : "#FFFFFF"}
@@ -189,14 +203,14 @@ def create_shaniUI():
     shaniUI.title("shaniUI")
 
     #BUTTONS
-    exitButton       = tkinter.Button(shaniUI, text = "EXIT", bg = "#000000", fg = "#FFFFFF", command = shaniUI.destroy).grid(row = 0, column = 5)
+    exitButton = tkinter.Button(shaniUI, text = "EXIT", bg = "#000000", fg = "#FFFFFF", command = shaniUI.destroy).grid(row = 0, column = 5)
     fullscreenButton = tkinter.Button(shaniUI, text = "TOGGLE FULLSCREEN", bg = "#000000", fg = "#FFFFFF", command = lambda : toggleFullscreen(shaniUI)).grid(row = 0, column = 0)
     soundboardButton = tkinter.Button(shaniUI, text = "SOUNDBOARD", bg = r.choice(colours), command = create_soundboard).grid(row = 1, column = 0)
-    shaniTTSButton   = tkinter.Button(shaniUI, text = "TEXT TO SPEECH", bg = r.choice(colours), command = shaniTTS).grid(row = 1, column = 5)
-    label            = tkinter.Label(shaniUI, text = "What do you want to convert to Shani Sir language? ", bg = r.choice(colours)).grid(row = 1, column = 2)
-    shaniTTSEntry    = tkinter.Entry(shaniUI)
+    randomspeakButton = tkinter.Button(shaniUI, text = "RANDOMSPEAK", bg = r.choice(colours), command = randomspeak).grid(row = 1, column = 5)
+    label = tkinter.Label(shaniUI, text = "What do you want to convert to Shani Sir language? ", bg = r.choice(colours)).grid(row = 1, column = 2)
+    shaniTTSEntry = tkinter.Entry(shaniUI)
     shaniTTSEntry.grid(row = 2, column = 2)
-    takeInput        = tkinter.Button(shaniUI, text = "Convert", bg = "#000000", fg = "#FFFFFF", command = lambda : returnConverted(shaniUI, shaniTTSEntry)).grid(row = 3, column = 2)
+    takeInput = tkinter.Button(shaniUI, text = "Convert", bg = "#000000", fg = "#FFFFFF", command = lambda : returnConverted(shaniUI, shaniTTSEntry)).grid(row = 3, column = 2)
     
 def create_soundboard():
 
@@ -213,16 +227,16 @@ def create_soundboard():
             labelo = tkinter.Label(soundboard, text = "COMING SOON", bg = r.choice(colours)).grid(row = i, column = j)
     
     #BUTTONS
-    exitButton         = tkinter.Button(soundboard, text = "EXIT", bg = "#000000", fg = "#FFFFFF", command = soundboard.destroy).grid(row = 0, column = 6)
-    fullscreenButton   = tkinter.Button(soundboard, text = "TOGGLE FULLSCREEN", bg = "#000000", fg = "#FFFFFF", command = lambda : toggleFullscreen(soundboard)).grid(row = 0, column = 0)
+    exitButton = tkinter.Button(soundboard, text = "EXIT", bg = "#000000", fg = "#FFFFFF", command = soundboard.destroy).grid(row = 0, column = 6)
+    fullscreenButton = tkinter.Button(soundboard, text = "TOGGLE FULLSCREEN", bg = "#000000", fg = "#FFFFFF", command = lambda : toggleFullscreen(soundboard)).grid(row = 0, column = 0)
     embarrassingButton = tkinter.Button(soundboard, text = "Embarrassing", bg = r.choice(colours), command = embarrassing).grid(row = 1, column = 1)
     like_you_sayButton = tkinter.Button(soundboard, text = "Like you say", bg = r.choice(colours), command = like_you_say).grid(row = 1, column = 2)
-    knockingButton     = tkinter.Button(soundboard, text = "KNOCKNKNOCKKNCOK", bg = r.choice(colours), command = knocking).grid(row = 1, column = 3)
-    so_sowryButton     = tkinter.Button(soundboard, text = "Sowry", bg = r.choice(colours), command = so_sowry).grid(row = 1, column = 4)
-    good_morningButton= tkinter.Button(soundboard, text = "Good morning", bg = r.choice(colours), command = good_morning).grid(row = 1, column = 5)
-    like_thisButton    = tkinter.Button(soundboard, text = "Like this", bg = r.choice(colours), command = like_this).grid(row = 2, column = 1)
-    not_clearButton    = tkinter.Button(soundboard, text = "Not clear?", bg = r.choice(colours), command = not_clear).grid(row = 2, column = 2)
-    waterButton        = tkinter.Button(soundboard, text = "Water", bg = r.choice(colours), command = water).grid(row = 2, column = 3)
-    worksheetButton    = tkinter.Button(soundboard, text = "Worksheet", bg = r.choice(colours), command = worksheet).grid(row = 2, column = 4)
+    knockingButton = tkinter.Button(soundboard, text = "KNOCKNKNOCKKNCOK", bg = r.choice(colours), command = knocking).grid(row = 1, column = 3)
+    so_sowryButton = tkinter.Button(soundboard, text = "Sowry", bg = r.choice(colours), command = so_sowry).grid(row = 1, column = 4)
+    good_morningButton = tkinter.Button(soundboard, text = "Good morning", bg = r.choice(colours), command = good_morning).grid(row = 1, column = 5)
+    like_thisButton = tkinter.Button(soundboard, text = "Like this", bg = r.choice(colours), command = like_this).grid(row = 2, column = 1)
+    not_clearButton = tkinter.Button(soundboard, text = "Not clear?", bg = r.choice(colours), command = not_clear).grid(row = 2, column = 2)
+    waterButton = tkinter.Button(soundboard, text = "Water", bg = r.choice(colours), command = water).grid(row = 2, column = 3)
+    worksheetButton = tkinter.Button(soundboard, text = "Worksheet", bg = r.choice(colours), command = worksheet).grid(row = 2, column = 4)
     
 create_shaniUI()

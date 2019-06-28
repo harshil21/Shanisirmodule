@@ -111,11 +111,13 @@ def shaniTTS(eng=''):
             cleaned.insert(index,r.choice(mood))
 
     	#More parameters to come...
+
     if eng!='':         #If input is passed
     	cleaned.insert(0,'good morning')
      
     else:
         messagebox.showinfo("Error", "There is nothing to convert, like you say.")          #Displays error box when no input is received.
+
     shanitext=' '.join(cleaned)
 
     #VOICE

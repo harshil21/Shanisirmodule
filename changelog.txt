@@ -1,0 +1,4 @@
+Version 0.9.2
+
+-Dynamically gets file path, so now you do not need to manually change file paths.
+-Entire module is now interactive and user friendly.
